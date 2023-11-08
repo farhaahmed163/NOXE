@@ -14,6 +14,6 @@ export class RegisterComponent {
     password: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z]/)])
   })
   sunbmitRegisterForm(registerForm: FormGroup) {
-    console.log(registerForm)
+    console.log(registerForm.value)
   }
 }
