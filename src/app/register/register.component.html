@@ -23,7 +23,7 @@
     <input formControlName="age" type="number" class="form-control mb-2 input-mine">
     <div class="alert alert-danger" *ngIf="registerForm.get('age')?.errors&&registerForm.get('age')?.touched">
       <p class="m-0" *ngIf="registerForm.get('age')?.getError('required')">age is required</p>
-      <p class="m-0" *ngIf="registerForm.get('age')?.getError('min')">min age is 13</p>
+      <p class="m-0" *ngIf="registerForm.get('age')?.getError('min')">min age is 16</p>
       <p class="m-0" *ngIf="registerForm.get('age')?.getError('max')">max age is 90</p>
     </div>
     <label for="Email">Email</label>
