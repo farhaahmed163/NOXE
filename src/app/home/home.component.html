@@ -1,1 +1,49 @@
-<p>home works!</p>
+<div class="row" *ngIf="trendingMovies">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2>Trending Movies <br> To Watch Right Now</h2>
+      <p class=" py-2 text-white-50">Most Watched Movies by The Day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+
+  </div>
+  <div class="col-md-2" *ngFor="let item of trendingMovies">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+
+</div>
+
+
+<div class="row py-5" *ngIf="trendingTv">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2>Trending TV <br> To Watch Right Now</h2>
+      <p class=" py-2 text-white-50">Most Watched Tvs by The Day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+
+  </div>
+  <div class="col-md-2" *ngFor="let item of trendingTv">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+
+</div>
+
+
+<div class="row" *ngIf="trendingPeople">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2>Trending People <br> To Watch Right Now</h2>
+      <p class=" py-2 text-white-50">Most Watched people by The Day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+
+  </div>
+  <div class="col-md-2" *ngFor="let item of trendingPeople">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+
+</div>

@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="w-75 mx-auto py-3">
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <form (ngSubmit)=" sunbmitloginForm(loginForm) " [formGroup]="loginForm">
+
+    <label for="email">Email</label>
+    <input formControlName="email" type="email" class="form-control mb-2 input-mine">
+    <div class="alert alert-danger" *ngIf="loginForm.get('email')?.errors&&loginForm.get('email')?.touched">
+      <p class="m-0" *ngIf="loginForm.get('email')?.getError('email')">You must enter valid Email</p>
+      <p class="m-0" *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+    </div>
+
+    <label for="Password">Password</label>
+    <input formControlName="password" type="password" class="form-control mb-2 input-mine">
+    <div class="alert alert-danger" *ngIf="loginForm.get('password')?.errors&&loginForm.get('password')?.touched">
+      <p class="m-0" *ngIf="loginForm.get('password')?.getError('pattern')">your password must start with uppercase
+      </p>
+      <p class="m-0" *ngIf="loginForm.get('password')?.getError('required')">Password is required
+      </p>
+    </div>
+
+    <button [disabled]="loginForm.invalid || isLoading" class="btn btn-info" type="submit">
+      <span *ngIf="!isLoading">Login</span>
+      <i *ngIf="isLoading" class="pi pi-spin pi-spinner" style="font-size: 2rem;color: #fff;"></i>
+      <!-- <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i> -->
+    </button>
+  </form>
+</div>

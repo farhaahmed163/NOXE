@@ -1,0 +1,9 @@
+<div class="item position-relative">
+  <img *ngIf="item.poster_path" class="w-100" [src]="'https://image.tmdb.org/t/p/w500/'+item.poster_path" alt="">
+  <img *ngIf="item.profile_path" class="w-100" [src]="'https://image.tmdb.org/t/p/w500/'+item.profile_path" alt="">
+  <img *ngIf="!item.profile_path && !item.poster_path " class="w-100"
+    src="../../assets/blank-profile-picture-973460_1280.webp" alt="">
+  <h3 class="h6 my-2">{{item.title}} {{item.name}}</h3>
+  <div *ngIf="item.vote_average" class="vote position-absolute top-0 end-0 text-white p-1">
+    {{item.vote_average.toFixed(1)}}</div>
+</div>
