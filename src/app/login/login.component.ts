@@ -50,4 +50,15 @@ export class LoginComponent {
       }
     })
   }
+  ngOnInit(): void {
+    this._AuthService.userData.subscribe({
+      next: () => {
+        if (this._AuthService.userData.getValue() != null) {
+          this._Router.navigate(['/home'])
+        }
+      }
+    })
+
+  }
+
 }

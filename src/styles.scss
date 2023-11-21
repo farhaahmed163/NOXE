@@ -30,3 +30,12 @@ a:hover {
   color: var(--text-color);
   border: 1px solid var(--border-color);
 }
+
+.brdr {
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.vote {
+  background-color: var(--light-color);
+}

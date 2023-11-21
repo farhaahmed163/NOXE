@@ -14,7 +14,8 @@ import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MediaItemComponent } from './media-item/media-item.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http'
     PeopleComponent,
     RegisterComponent,
     TvComponent,
-    LoginComponent
+    LoginComponent,
+    MediaItemComponent
   ],
   imports: [
     BrowserModule,
