@@ -9,6 +9,7 @@ import { PeopleComponent } from './people/people.component';
 import { AboutComponent } from './about/about.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { authGuard } from './auth.guard';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 
   { path: 'movies', canActivate: [authGuard], component: MoviesComponent },
+  { path: 'movie-details/:id/:media_type', canActivate: [authGuard], component: MovieDetailsComponent },
   { path: 'tv', canActivate: [authGuard], component: TvComponent },
   { path: 'people', canActivate: [authGuard], component: PeopleComponent },
 
