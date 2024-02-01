@@ -7,8 +7,8 @@
     <div>
       <h3 class=" my-2">{{item.title}} {{item.name}}</h3>
       <p class="py-2 text-white-50">{{item.overview}}</p>
-      <h6 *ngIf="item.vote_count">vote_count : {{item.vote_count}}</h6>
-      <h6 *ngIf="item.vote_average">vote_average : {{item.vote_average}}</h6>
+      <h6 *ngIf="item.vote_count">Votes : {{item.vote_count}}</h6>
+      <h6 *ngIf="item.vote_average">Rate : {{item.vote_average.toFixed(1)}}</h6>
     </div>
 
   </div>
