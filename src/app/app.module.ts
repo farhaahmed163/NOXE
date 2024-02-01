@@ -13,10 +13,13 @@ import { PeopleComponent } from './people/people.component';
 import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MediaItemComponent } from './media-item/media-item.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component'
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { WatchPipe } from './watch.pipe';
+import { SeemorePipe } from './seemore.pipe';
+import { SerachPipe } from './serach.pipe';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,19 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component'
     TvComponent,
     LoginComponent,
     MediaItemComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    WatchPipe,
+    SeemorePipe,
+    SerachPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, ReactiveFormsModule, HttpClientModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

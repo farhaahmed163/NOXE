@@ -1,4 +1,7 @@
 <div class="row" *ngIf="trendingMovies">
+  <div class="div p-4">
+    <input class="form-control" type="text" [(ngModel)]="term" name="" placeholder="Search..." id="">
+  </div>
   <div class="col-md-4 d-flex align-items-center">
     <div>
       <div class="brdr w-25 mb-3"></div>
@@ -8,7 +11,7 @@
     </div>
 
   </div>
-  <div class="col-md-2" *ngFor="let item of trendingMovies">
+  <div class="col-md-2" *ngFor="let item of trendingMovies|serach:term">
     <app-media-item [item]="item"></app-media-item>
   </div>
 

@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-tv',
   templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.scss']
+  styleUrls: ['./tv.component.scss'],
 })
 export class TvComponent {
-
+  userName: string = 'Ahmed';
 }
