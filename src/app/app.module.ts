@@ -14,12 +14,13 @@ import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MediaItemComponent } from './media-item/media-item.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { WatchPipe } from './watch.pipe';
 import { SeemorePipe } from './seemore.pipe';
 import { SerachPipe } from './serach.pipe';
+import { ApiKeyInterceptor } from './api-key.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,13 @@ import { SerachPipe } from './serach.pipe';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiKeyInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
